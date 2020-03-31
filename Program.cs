@@ -15,8 +15,21 @@ namespace AssignmentNo20
             List<Thread> listOfThreads = new List<Thread>();
 
             listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiEnglish(name, count))));
-           
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiKorean(name, count))));
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiFrench(name, count))));
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiGreek(name, count))));
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiHindi(name, count))));
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiRussian(name, count))));
+            listOfThreads.Add(new Thread(new ThreadStart(() => hi.SayHiSwedish(name, count))));
+
+
+            foreach (var thread in listOfThreads)
+            {
+                thread.Start();
+            }
+
         }
+
     }
 
     class SayHi
